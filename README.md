@@ -5,12 +5,8 @@
 * Run `train_multiple.py` to train models for each HYPERPARAMETER value you set.
   The model weights will be saved into a new `models` subdirectory.
 * Run `performance.py` to measure classification and regression performance.
-* _Optionally, choose a model and run `sanity_check.py
-  models/your_model_here.pth` to visualize the specified model's classification
-  performance._
 * Includes a pretrained model.
 
-**sanity_check.py is deprecated**
 
 **TODO**:
 * Graph per-epoch metrics
@@ -65,16 +61,6 @@ Imports from: `env.py`, `data_handling.py`, `core.py`, `model.py`, `distribution
 `visualizations.py`.
 Illegal imports: None.
 
-### `sanity_check.py`
-Plots the model's predicted distribution and the ground truth distribution on
-the same plot so you can visualize its classification performance.
-
-Takes one command-line argument: the name of the model weights file.
-
-If `env.py`'s `NUM_DIMENSIONS` is 1, then `sanity_check.py` tests the model on
-each of the 9 distribution families. If `env.py`'s NUM_DIMENSIONS is 2, then
-`sanity_check.py` tests the model on all 81 possible permutation pairs.
-
 ### `generate_data.py`
 Generates train AND test data based on `CONFIG` in `env.py`, 
 saves it to `data`.
@@ -96,7 +82,7 @@ If in testing mode, runs one epoch and prints more detailed metrics.
 Imported by: `train_multiple.py`, `performance.py`.
 Imports from: `model.py`, `metrics.py`, `data_handling.py`.
 Illegal imports: `env.py`, `train_multiple.py`, `performance.py`, 
-  `generate_data.py`, `sanity_check.py`.
+  `generate_data.py`.
 
 
 ### `data_handling.py`
@@ -115,7 +101,7 @@ dict. This becomes the filename to which the model's weights are saved.
 Imported by: `core.py`, `generate_data.py`.
 Imports from: `distributions.py`.
 Illegal imports: `env.py`, `core.py`, `metrics.py`, `train_multiple.py`, 
-  `performance.py`, `generate_data.py`, `sanity_check.py`.
+  `performance.py`, `generate_data.py`.
 
 ### `metrics.py`
 Handles calculation and print-display of the model's performance metrics.
@@ -132,7 +118,7 @@ and regression metrics, averaged over the model's full run.
 Imported by: `core.py`.
 Imports from: `model.py`, `distributions.py`.
 Illegal imports: `env.py`, `core.py`, `data_handling.py`, `train_multiple.py`,
-`performance.py`, `generate_data.py`, `sanity_check.py`.
+`performance.py`, `generate_data.py`.
 
 ### `model.py`
 Contains the model architecture and loss function.
