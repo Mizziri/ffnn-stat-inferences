@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# MIT License
+LICENSE
+
+# Virtual environments
+.venv
+.python-version
+
+# MacOS
+.DS_Store
+
+# vim
+*.swp
+
+# models and data directory are too big to push
+models/
+data/
+logs/
+default/
+results/
+*.zip
+
+# vscode workspace file
+ffnn-stat-inferences.code-workspace
